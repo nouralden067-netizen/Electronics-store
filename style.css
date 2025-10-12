@@ -3,7 +3,7 @@
     padding: 0;
     font-family: system-ui;
     box-sizing: border-box;
-    scroll-behavior: smooth; 
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -18,16 +18,16 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 95%;
-    margin: 0 auto; 
+    margin: 0 auto;
     padding: 10px 30px;
     border-radius: 20px;
     border-bottom: 2px solid #000;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.486);
-    
+
     position: sticky;
     top: 0;
     z-index: 1000;
-    transition: top 0.4s ease; 
+    transition: top 0.4s ease;
 }
 
 header img {
@@ -83,7 +83,7 @@ header img {
     border-radius: 20px;
     background: #effcff;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .image img {
@@ -95,17 +95,17 @@ header img {
     margin-bottom: 10px;
 }
 
-.image2{
+.image2 {
     border: 2px solid #000;
     padding: 15px;
     width: 350px;
     border-radius: 20px;
     background: #effcff;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.image2 img{
+.image2 img {
     width: 300px;
     height: 250px;
     object-fit: cover;
@@ -148,6 +148,71 @@ span:last-of-type {
     background: #0048b5;
 }
 
+#contact {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f8fbff;
+    border-top: 2px solid #000;
+    border-radius: 30px;
+}
+
+#contact h2 {
+    color: #00bcd4;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.git,
+.link,
+.face,
+.insta {
+    border: 2px solid #000;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.git img{
+   background: #fff;
+   border-radius: 27px;
+}
+
+.git:hover {
+    transform: translateY(-10px);
+    background: #2d2d2d;
+    box-shadow: 0px 0px 5px 3px #464444;
+}
+
+.link:hover {
+    transform: translateY(-10px);
+    background: #549ff5;
+    box-shadow: 0px 0px 5px 3px #54cff8;
+}
+
+.face:hover {
+    transform: translateY(-10px);
+    background: #022cff;
+    box-shadow: 0px 0px 5px 3px #4153fa;
+}
+
+.insta:hover {
+    transform: translateY(-10px);
+    background: #ff025b;
+    box-shadow: 0px 0px 5px 3px #f56186;
+}
 
 /* ---------------- Responsive Navbar ---------------- */
 @media (max-width: 768px) {
@@ -186,11 +251,28 @@ span:last-of-type {
         font-size: 18px;
     }
 
+    .git {
+        background: #000;
+    }
+
+    .link {
+        background: #549ff5;
+    }
+
+    .face {
+        background: #022cff;
+    }
+
+    .insta {
+        background: #ff025b;
+    }
+
     @keyframes slideDown {
         from {
             opacity: 0;
             transform: translateY(-20px);
         }
+
         to {
             opacity: 1;
             transform: translateY(0);
