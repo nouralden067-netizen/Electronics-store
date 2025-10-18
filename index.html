@@ -10,10 +10,19 @@
 
 <body>
 
+
     <div class="container">
+
         <header>
-            <div class="logo">
-                <img src="logo.png" alt="logo">
+            <div>
+                <img class="logo" src="logo.png" alt="logo">
+            </div>
+
+            <input id="search" type="text" name="title" placeholder="search">
+
+            <div onclick="getcart()" id="cart">
+                <img src="cart.png" width="30">
+                <span id="cart-count">0</span>
             </div>
 
             <nav class="navbar">
@@ -30,17 +39,23 @@
             <div class="menu-icon" onclick="toggleMenu()">
                 ☰
             </div>
+
+
         </header>
 
+        <div id="page">
+            <button onclick="getbutton()" id="btu">&times</button>
+            <h1>shopping cart</h1>
+        </div>
 
         <main id="phone" class="content">
-
             <div class="image">
                 <a href="index2.html" target="_parent"><img src="image1.jpg" alt="iPhone 16 Pro Max"></a>
                 <p><strong>Phone:</strong> iPhone 16 Pro Max</p>
                 <span><strong>Old price:</strong> <del>79000 EGP</del></span><br>
                 <span><strong>Now:</strong> 77000 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display:none !important;">Remove</button>
             </div>
 
             <div class="image">
@@ -48,7 +63,8 @@
                 <p><strong>Phone:</strong> Infinix Hot 50i</p>
                 <span><strong>Old price:</strong> <del>5000 EGP</del></span><br>
                 <span><strong>Now:</strong> 4500 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display:none !important;">Remove</button>
             </div>
 
             <div class="image">
@@ -56,7 +72,8 @@
                 <p><strong>Phone:</strong> Redmi Note 14</p>
                 <span><strong>Old price:</strong> <del>10000 EGP</del></span><br>
                 <span><strong>Now:</strong> 9100 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display:none !important;">Remove</button>
             </div>
 
             <div class="image">
@@ -64,7 +81,8 @@
                 <p><strong>Phone:</strong> Samsung Galaxy A26 5G</p>
                 <span><strong>Old price:</strong> <del>13000 EGP</del></span><br>
                 <span><strong>Now:</strong> 11500 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display: none !important;">Remove</button>
             </div>
 
             <div class="image">
@@ -72,7 +90,8 @@
                 <p><strong>Phone:</strong> Huawei Nova 13 Pro</p>
                 <span><strong>Old price:</strong> <del>40000 EGP</del></span><br>
                 <span><strong>Now:</strong> 35000 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display: none !important;">Remove</button>
             </div>
 
         </main>
@@ -84,7 +103,8 @@
                 <p><strong>Pc:</strong> Masterbox 520</p>
                 <span><strong>Old price:</strong> <del>4500 EGP</del></span><br>
                 <span><strong>Now:</strong> 4000 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display: none !important;">Remove</button>
             </div>
 
             <div class="image">
@@ -92,7 +112,8 @@
                 <p><strong>Pc:</strong> Midtower Auros ATX C500 Glass</p>
                 <span><strong>Old price:</strong> <del>12000 EGP</del></span><br>
                 <span><strong>Now:</strong> 10500 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display:none !important;">Remove</button>
             </div>
 
             <div class="image">
@@ -100,7 +121,8 @@
                 <p><strong>Pc:</strong> HP EliteDesk 705 G1</p>
                 <span><strong>Old price:</strong> <del>4000 EGP</del></span><br>
                 <span><strong>Now:</strong> 3500 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display:none !important;">Remove</button>
             </div>
 
             <div class="image">
@@ -108,7 +130,8 @@
                 <p><strong>Pc:</strong> GC-801 Iron Hide</p>
                 <span><strong>Old price:</strong> <del>8000 EGP</del></span><br>
                 <span><strong>Now:</strong> 7500 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display:none !important;">Remove</button>
             </div>
 
             <div class="image">
@@ -116,7 +139,8 @@
                 <p><strong>Pc:</strong> ATX Mid Tower 216</p>
                 <span><strong>Old price:</strong> <del>6000 EGP</del></span><br>
                 <span><strong>Now:</strong> 5000 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display:none !important;">Remove</button>
             </div>
 
         </main>
@@ -128,7 +152,8 @@
                 <p><strong>laptop:</strong> MSI Raider 18 HX AI</p>
                 <span><strong>Old price:</strong><del>30000 EGP</del></span><br>
                 <span><strong>Now:</strong> 28000 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display:none !important;">Remove</button>
             </div>
 
             <div class="image2">
@@ -136,7 +161,8 @@
                 <p><strong>laptop:</strong> DELL latitude 5510</p>
                 <span><strong>Old price:</strong> <del>12000 EGP</del></span><br>
                 <span><strong>Now:</strong> 10000 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display:none !important;">Remove</button>
             </div>
 
             <div class="image2">
@@ -144,7 +170,8 @@
                 <p><strong>laptop:</strong> HP ZBook Studio G5</p>
                 <span><strong>Old price:</strong> <del>18000 EGP</del></span><br>
                 <span><strong>Now:</strong> 17000 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display:none !important;">Remove</button>
             </div>
 
             <div class="image2">
@@ -152,7 +179,8 @@
                 <p><strong>laptop:</strong> LENOVO LOQ 15IRX9</p>
                 <span><strong>Old price:</strong> <del>38000 EGP</del></span><br>
                 <span><strong>Now:</strong> 35000 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display:none !important;">Remove</button>
             </div>
 
             <div class="image2">
@@ -160,7 +188,8 @@
                 <p><strong>laptop:</strong> Hp vicus 15-fa1043ne</p>
                 <span><strong>Old price:</strong> <del>38000 EGP</del></span><br>
                 <span><strong>Now:</strong> 37000 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display:none !important;">Remove</button>
             </div>
 
         </main>
@@ -172,7 +201,8 @@
                 <p><strong>screen:</strong> Viewsonic</p>
                 <span><strong>Old price:</strong> <del>30000 EGP</del></span><br>
                 <span><strong>Now:</strong> 27000 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display:none !important;">Remove</button>
             </div>
 
             <div class="image">
@@ -180,7 +210,8 @@
                 <p><strong>screen:</strong> Viewsonic</p>
                 <span><strong>Old price:</strong> <del>6000 EGP</del></span><br>
                 <span><strong>Now:</strong> 5500 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display:none !important;">Remove</button>
             </div>
 
             <div class="image">
@@ -188,7 +219,8 @@
                 <p><strong>screen:</strong> Viewsonic</p>
                 <span><strong>Old price:</strong> <del>14000 EGP</del></span><br>
                 <span><strong>Now:</strong> 13000 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display:none !important;">Remove</button>
             </div>
 
             <div class="image2">
@@ -196,7 +228,8 @@
                 <p><strong>screen:</strong> viewsonic </p>
                 <span><strong>Old price:</strong> <del>8500 EGP</del></span><br>
                 <span><strong>Now:</strong> 7500 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display:none !important;">Remove</button>
             </div>
 
             <div class="image2">
@@ -204,7 +237,8 @@
                 <p><strong>screen:</strong> Xiaomi A24i 24</p>
                 <span><strong>Old price:</strong> <del>6000 EGP</del></span><br>
                 <span><strong>Now:</strong> 5300 EGP</span>
-                <input type="submit" value="Add to cart">
+                <input class="click" type="submit" value="Add to cart">
+                <button class="remove" style="display:none !important;">Remove</button>
             </div>
 
         </main>
