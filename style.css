@@ -426,7 +426,7 @@ span:last-of-type {
             transform: translateY(0);
         }
     }
-}
+
 
 @keyframes fadeIn {
     0% {

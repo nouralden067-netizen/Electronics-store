@@ -52,11 +52,16 @@ window.addEventListener('load', () => {
 
     cartContainer.innerHTML = '';
 
-    savedCart.forEach(itemHTML => {
+    savedCart.forEach(item => {
+        let product = document.createElement('div');
+        product.className = 'image';
+        product.innerHTML = `
+        <img src="${item.image}" alt="${item.name}">
+        <p>${item.name}</p>
+        <p class="price">${item.price}</p>
+        <button class="remove">Remove</button>
+    `;
 
-        let tempDiv = document.createElement('div');
-        tempDiv.innerHTML = itemHTML.trim();
-        let product = tempDiv.firstElementChild;
         let removeBtn = product.querySelector('.remove');
 
         if (removeBtn) {
@@ -76,7 +81,7 @@ window.addEventListener('load', () => {
     addButtons.forEach(btn => {
 
         let productName = btn.parentElement.querySelector('p').innerText;
-        if (savedCart.some(item => item.includes(productName))) {
+        if (savedCart.some(item => item.name === productName)) {
             btn.parentElement.style.display = 'none';
         }
     });
@@ -108,8 +113,15 @@ addButtons.forEach(btn => {
 
         clone.classList.add('fade-in');
         cartContainer.appendChild(clone);
-        savedCart.push(clone.outerHTML);
+        let productData = {
+            name: product.querySelector('p').innerText,
+            image: product.querySelector('img').src,
+            price: product.querySelector('.price') ? product.querySelector('.price').innerText : ''
+        };
+
+        savedCart.push(productData);
         localStorage.setItem('cartItems', JSON.stringify(savedCart));
+
         product.style.display = 'none';
         updateCartCount();
     });
@@ -120,13 +132,8 @@ function removeFromCart(product) {
     let name = product.querySelector('p').innerText;
     product.classList.add('fade-out'); setTimeout(() => {
 
-        savedCart = savedCart.filter(item => {
+savedCart = savedCart.filter(item => item.name !== name);
 
-            let temp = document.createElement('div');
-            temp.innerHTML = item;
-            let itemName = temp.querySelector('p').innerText;
-            return itemName !== name;
-        });
 
         localStorage.setItem('cartItems', JSON.stringify(savedCart));
         product.remove();
