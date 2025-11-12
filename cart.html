@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart - ElectroWave</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: #f8fbff;
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+        }
+
+
+        header {
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 25px;
+            border-radius: 20px;
+            box-shadow: 0 0 8px #0000004d;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+            transition: top 0.4s ease;
+        }
+
+        header #search {
+            border: none;
+            outline: none;
+            background: #ededed;
+            width: 100%;
+            max-width: 990px;
+            height: 40px;
+            border-radius: 40px;
+            padding: 10px;
+            transition: 0.3s;
+        }
+
+        header #search:focus {
+            background: #d7d7d7;
+        }
+
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 250px;
+            height: 100vh;
+            background: #ffffffef;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 15px 0 0 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            transition: right 0.5s ease;
+            padding: 30px 20px;
+            z-index: 999;
+        }
+
+        .navbar.active {
+            right: 0;
+        }
+
+        .navbar ul {
+            list-style: none;
+            width: 100%;
+            padding: 0;
+        }
+
+        .navbar li {
+            margin: 15px 0;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 15px;
+            transition: 0.3s;
+            display: block;
+            font-size: 18px;
+        }
+
+        .navbar a:hover,
+        .navbar a.Home {
+            background: #02027a;
+            color: #fff;
+        }
+
+        .menu-icon {
+            width: 35px;
+            height: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-icon span {
+            display: block;
+            height: 4px;
+            background: #000;
+            border-radius: 3px;
+            transition: 0.4s;
+        }
+
+        .menu-icon.active span:nth-child(1) {
+            transform: translateY(10px) rotate(45deg);
+        }
+
+        .menu-icon.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-icon.active span:nth-child(3) {
+            transform: translateY(-10px) rotate(-45deg);
+        }
+
+
+        h1 {
+            padding: 0 10px;
+            text-align: center;
+            color: #fff;
+            background: #2525f1;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        #cart-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .cart-item {
+            width: 220px;
+            border: 2px solid #000;
+            border-radius: 10px;
+            background: #fff;
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .cart-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .cart-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-bottom: 1px solid #000;
+        }
+
+        .cart-item p {
+            margin: 10px 0;
+        }
+
+        .cart-item button {
+            background: #fff;
+            color: red;
+            border: 2px solid red;
+            border-radius: 20px;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .cart-item button:hover {
+            background: #ff0000;
+            color: #fff;
+        }
+
+        #empty {
+            text-align: center;
+            color: #555;
+            margin-top: 40px;
+            font-size: 18px;
+        }
+
+     
+        @media (max-width: 992px) {
+            .cart-item {
+                width: 45%;
+            }
+
+            header #search {
+                width: 70%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cart-item {
+                width: 70%;
+            }
+
+            header #search {
+                width: 80%;
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cart-item {
+                width: 90%;
+            }
+
+            header #search {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div>
+            <img class="logo" src="images/logo.png" alt="logo" width="70px">
+        </div>
+
+        <input id="search" type="text" name="title" placeholder="search">
+
+        <nav class="navbar">
+
+            <ul>
+                <li><a class="Home" href="index.html">Home</a></li>
+                <li><a href="index2.html">Phones</a></li>
+                <li><a href="pcs.html">Computers and Computer screens</a></li>
+                <li><a href="laps.html">Laptops</a></li>
+                <li><a href="screens.html">Screens TV</a></li>
+                <li><a href="wristwatchs.html">Watches</a></li>
+                <li><a href="earphones.html">headphones</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+    </header>
+
+    <h1>🛒 shopping cart</h1>
+    <div id="cart-items"></div>
+    <p id="empty" style="display:none;">The cart is currently empty</p>
+    <script>
+
+        const menuIcon = document.querySelector(".menu-icon");
+        const navbar = document.querySelector(".navbar");
+
+        function toggleMenu() {
+            menuIcon.classList.toggle("active");
+            navbar.classList.toggle("active");
+        }
+
+        document.addEventListener("click", function (e) {
+            if (!navbar.contains(e.target) && !menuIcon.contains(e.target)) {
+                navbar.classList.remove("active");
+                menuIcon.classList.remove("active");
+            }
+        })
+        let lastScrollTop = 0;
+        window.addEventListener("scroll", function () {
+            const header = document.querySelector("header");
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            header.style.top = currentScroll > lastScrollTop ? "-100px" : "0";
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+
+        const searchInput = document.getElementById('search');
+        if (searchInput) {
+            searchInput.addEventListener('input', function () {
+                let searchValue = this.value.toLowerCase().trim();
+                let allProducts = document.querySelectorAll('.image, .image2');
+                allProducts.forEach(product => {
+                    let productName = product.querySelector('p').innerText.toLowerCase();
+                    product.style.display = productName.includes(searchValue) ? 'block' : 'none';
+                });
+            });
+        }
+
+        const cartContainer = document.getElementById('cart-items');
+        const emptyText = document.getElementById('empty');
+        const savedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+        let totalEl = document.createElement('p');
+        totalEl.id = 'total-price';
+        totalEl.style.textAlign = 'center';
+        totalEl.style.fontWeight = 'bold';
+        totalEl.style.fontSize = '18px';
+        totalEl.style.marginTop = '20px';
+        cartContainer.after(totalEl);
+
+        function renderCart() {
+            cartContainer.innerHTML = '';
+
+            if (savedCart.length === 0) {
+                emptyText.style.display = 'block';
+                totalEl.textContent = '';
+                return;
+            } else {
+                emptyText.style.display = 'none';
+            }
+
+            let total = 0;
+
+            savedCart.forEach((item, index) => {
+                let div = document.createElement('div');
+                div.className = 'cart-item';
+                div.innerHTML = `
+                <img src="${item.image}" alt="${item.name}">
+                <p><strong>${item.name}</strong></p>
+                <p>${item.price}</p>
+                <button onclick="removeItem(${index})">Remove</button>
+            `;
+                cartContainer.appendChild(div);
+
+                let priceNumber = parseFloat(item.price.replace(/[^0-9\.]/g, '')) || 0;
+                let qty = item.quantity || 1;
+                total += priceNumber * qty;
+            });
+
+            totalEl.textContent = `Total: EGP${total.toFixed(2)}`;
+        }
+
+        function removeItem(index) {
+            let removedItem = savedCart[index];
+            savedCart.splice(index, 1);
+            localStorage.setItem('cartItems', JSON.stringify(savedCart));
+            renderCart();
+            localStorage.setItem('lastRemoved', removedItem.name);
+        }
+
+        renderCart();
+    </script>
+
+</body>
+
+</html>

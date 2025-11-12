@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f8fbff;
+}
+
+header {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 8px #0000004d;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+    transition: top 0.4s ease;
+}
+
+header #search {
+    border: none;
+    outline: none;
+    background: #ededed;
+    width: 80%;
+    max-width: 990px;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+header #search:focus {
+    background: #d7d7d7;
+}
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 250px;
+    height: 100vh;
+    background: #ffffffef;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px 0 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    transition: right 0.5s ease;
+    padding: 30px 20px;
+    z-index: 999;
+}
+
+.navbar.active {
+    right: 0;
+}
+
+.navbar ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 15px 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 15px;
+    transition: 0.3s;
+    display: block;
+    font-size: 18px;
+}
+
+.navbar a:hover,
+.navbar a.Home {
+    background: #02027a;
+    color: #fff;
+}
+
+
+.menu-icon {
+    width: 35px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-icon span {
+    display: block;
+    height: 4px;
+    background: #000;
+    border-radius: 3px;
+    transition: 0.4s;
+}
+
+.menu-icon.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 60px auto;
+    gap: 40px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.image,
+.image2 {
+    background: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    border: 2px solid #000;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.image:hover,
+.image2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.image {
+    width: 220px;
+}
+
+.image2 {
+    width: 350px;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    border-bottom: 2px solid #000;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.image p {
+    margin: 10px 0;
+}
+
+span del {
+    color: #777;
+}
+
+span:last-of-type {
+    color: #008000;
+    font-weight: bold;
+}
+
+
+.click,
+.remove {
+    width: 130px;
+    padding: 8px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.click {
+    border: 2px solid #5772fa;
+    color: #3c36ff;
+    background: #fff;
+}
+
+.click:hover {
+    background: #022cff;
+    color: #fff;
+    box-shadow: 0 0 5px #8a9bee;
+}
+
+.remove {
+    border: 2px solid #ff0000;
+    color: #ff0000;
+    background: #fff;
+}
+
+.remove:hover {
+    background: #ff0000;
+    color: #fff;
+    box-shadow: 0 0 5px #ff7878;
+}
+
+@media (max-width: 1024px) {
+    .image2 {
+        width: 300px;
+    }
+
+    header #search {
+        width: 70%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 15px;
+    }
+
+    header #search {
+        width: 60%;
+    }
+
+    .image {
+        width: 180px;
+    }
+
+    .image2 {
+        width: 250px;
+    }
+
+    .content {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header #search {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .image {
+        width: 150px;
+    }
+
+    .image2 {
+        width: 200px;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}

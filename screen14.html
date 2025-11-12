@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LG TV</title>
+    <link rel="stylesheet" href="phones.css">
+</head>
+
+<body>
+    <header>
+
+      <div>
+        <img class="logo" src="images/logo.png" alt="logo" width="70px">
+      </div>
+
+      <input id="search" type="text" name="title" placeholder="search">
+
+      <div id="cart">
+        <a href="cart.html"><img src="images/cart.png" width="30"></a>
+        <span id="cart-count">0</span>
+      </div>
+
+      <nav class="navbar">
+
+        <ul>
+          <li><a class="Home" href="index.html">Home</a></li>
+          <li><a href="index2.html">Phones</a></li>
+          <li><a href="pcs.html">Computers and Computer screens</a></li>
+          <li><a href="laps.html">Laptops</a></li>
+          <li><a href="screens.html">Screens TV</a></li>
+          <li><a href="wristwatchs.html">Watches</a></li>
+          <li><a href="earphones.html">headphones</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+      </nav>
+
+      <div class="menu-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+
+    </header>
+
+    <div class="container">
+        <article class="product-card">
+            <figure class="media">
+                <button class="slider-btn prev">&#10094;</button>
+                <button class="slider-btn next">&#10095;</button>
+
+                <img src="images/screen40.jpg" alt="صورة المنتج 1" class="active">
+                <img src="images/screen41.jpg" alt="صورة المنتج 2">
+                <img src="images/screen42.jpg" alt="صورة المنتج 3">
+
+                <div class="dots">
+                    <div class="dot active" data-index="0"></div>
+                    <div class="dot" data-index="1"></div>
+                    <div class="dot" data-index="2"></div>
+                </div>
+            </figure>
+
+            <section class="info">
+                <h1 class="title" id="productName">LG TV</h1>
+                <p class="subtitle">One-year warranty • Fast shipping</p>
+
+                <div class="price-row">
+                    <div class="price" id="productPrice">24000 EGP</div>
+                    <div class="old-price">25000 EGP</div>
+                    <div class="badge-sale">20% discount</div>
+                </div>
+
+                <p class="desc">
+                    LG 55-inch NanoCell 4K Smart TV – AI Processor & Magic Remote – HDR10 Support & webOS 25 – Model:
+                    55NANO80A6A.AFU (2025 Edition)
+                </p>
+
+                <div class="controls">
+                    <div class="qty">
+                        <button id="dec">−</button>
+                        <span id="qty">1</span>
+                        <button id="inc">+</button>
+                    </div>
+                    <button class="add-btn" id="addBtn">Add to cart</button>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <script src="phones.js"></script>
+</body>
+
+</html>
